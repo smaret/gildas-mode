@@ -25,15 +25,27 @@
   "Syntax table for `gildas-mode'.")
 
 (defconst gildas-keywords
-  (regexp-opt '("@" "begin" "break" "continue" "else" "exit" "end" "for"
+  (regexp-opt '("\@" "begin" "break" "continue" "else" "exit" "end" "for"
 		"if" "next" "on" "pause" "python" "quit" "return" "accept"
 		"compute" "define" "delete" "examine" "import" "let"
 		"message" "mfit" "parse" "say" "sic" "sort" "symbol"
 		"system") 'words)
   "Keywords for `gildas-mode'.")
 
+(defconst gildas-types
+  (regexp-opt '("real" "integer" "double" "logical" "character" "table"
+		"header" "image" "uvtable" "structure" "fits" 
+		"alias") 'words)
+  "Types for `gildas-mode'.")
+
+(defconst gildas-constants
+  (regexp-opt '("no" "pi" "sec" "yes") 'words)
+  "Constants for `gildas-mode'.")
+
 (defvar gildas-font-lock-keywords
-  `((,gildas-keywords . font-lock-keyword-face))
+  `((,gildas-keywords . font-lock-keyword-face)
+    (,gildas-types . font-lock-type-face)
+    (,gildas-constants . font-lock-constant-face))
   "Keyword highlighting specification for `gildas-mode'.")
 
 (define-derived-mode gildas-mode prog-mode "Gildas"
