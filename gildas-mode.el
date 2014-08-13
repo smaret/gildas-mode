@@ -46,8 +46,11 @@
   `((,gildas-keywords . font-lock-keyword-face)
     (,gildas-types . font-lock-type-face)
     (,gildas-constants . font-lock-constant-face)
-    ;; Fixme: this does not highlight function names with _ properly
-    ("procedure \\(\\sw+\\)" (1 font-lock-function-name-face)))
+    ;; Fixme: this does not highlight properly functions and variables
+    ;; that have an underscore in their names
+    ("procedure \\(\\sw+\\)" (1 font-lock-function-name-face))
+    ("let \\(\\sw+\\)" (1 font-lock-variable-name-face))
+    ("define \\sw+ \\(\\sw+\\)" (1 font-lock-variable-name-face)))
   "Keyword highlighting specification for `gildas-mode'.")
 
 (define-derived-mode gildas-mode prog-mode "Gildas"
