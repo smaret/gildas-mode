@@ -25,11 +25,11 @@
   "Syntax table for `gildas-mode'.")
 
 (defconst gildas-keywords
-  (regexp-opt '("\@" "begin" "break" "continue" "else" "exit" "end" "for"
-		"if" "next" "on" "pause" "python" "quit" "return" "accept"
-		"compute" "define" "delete" "examine" "import" "let"
-		"message" "mfit" "parse" "say" "sic" "sort" "symbol"
-		"system") 'words)
+  (regexp-opt '("\@" "begin" "break" "continue" "else" "exit" "end" "endif"
+		"for" "if" "next" "on" "pause" "python" "quit" "return"
+		"accept" "compute" "define" "delete" "examine" "import" "let"
+		"message" "mfit" "next" "parse" "say" "sic" "sort" "symbol"
+		"system" "then" "to") 'words)
   "Keywords for `gildas-mode'.")
 
 (defconst gildas-types
