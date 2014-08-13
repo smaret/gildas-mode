@@ -34,8 +34,8 @@
 
 (defconst gildas-types
   (regexp-opt '("real" "integer" "double" "logical" "character" "table"
-		"header" "image" "uvtable" "structure" "fits" 
-		"alias") 'words)
+		"header" "image" "uvtable" "structure" "fits" "alias"
+		"procedure" "help" "data") 'words)
   "Types for `gildas-mode'.")
 
 (defconst gildas-constants
