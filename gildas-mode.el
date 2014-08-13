@@ -45,7 +45,9 @@
 (defvar gildas-font-lock-keywords
   `((,gildas-keywords . font-lock-keyword-face)
     (,gildas-types . font-lock-type-face)
-    (,gildas-constants . font-lock-constant-face))
+    (,gildas-constants . font-lock-constant-face)
+    ;; Fixme: this does not highlight function names with _ properly
+    ("procedure \\(\\sw+\\)" (1 font-lock-function-name-face)))
   "Keyword highlighting specification for `gildas-mode'.")
 
 (define-derived-mode gildas-mode prog-mode "Gildas"
