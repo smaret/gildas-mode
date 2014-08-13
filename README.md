@@ -6,7 +6,7 @@ gildas-mode is free software, licensed under the GNU GPL.
 
 # Features
 
-* Syntax highlighting based on f90-mode
+* Syntax highlighting of comments and keywords
 * Python mode for PyGildas chunks, based on polymode
 
 # Installation

@@ -17,8 +17,32 @@
 
 (require 'polymode)
 
-(define-derived-mode gildas-mode f90-mode "Gildas"
-  "Major mode for gildas.")
+(defvar gildas-mode-syntax-table
+  (let ((st (make-syntax-table)))
+    (modify-syntax-entry ?\! "<" st) ; begin comment
+    (modify-syntax-entry ?\n ">" st) ; end comment
+    st)
+  "Syntax table for `gildas-mode'.")
+
+(defconst gildas-keywords
+  (regexp-opt '("@" "begin" "break" "continue" "else" "exit" "end" "for"
+		"if" "next" "on" "pause" "python" "quit" "return" "accept"
+		"compute" "define" "delete" "examine" "import" "let"
+		"message" "mfit" "parse" "say" "sic" "sort" "symbol"
+		"system") 'words)
+  "Keywords for `gildas-mode'.")
+
+(defvar gildas-font-lock-keywords
+  `((,gildas-keywords . font-lock-keyword-face))
+  "Keyword highlighting specification for `gildas-mode'.")
+
+(define-derived-mode gildas-mode prog-mode "Gildas"
+  "Major mode for Gildas."
+  :syntax-table gildas-mode-syntax-table
+  (setq-local comment-start "!")
+  (setq-local comment-start-skip "!+ *")
+  (setq-local font-lock-defaults
+	      '(gildas-font-lock-keywords)))
 
 (defcustom pm-host/gildas
   (pm-bchunkmode "gildas"
@@ -40,7 +64,7 @@
   (pm-polymode-one "pygildas"
                    :hostmode 'pm-host/gildas
                    :innermode 'pm-inner/pygildas)
-  "Gildas polymode."
+  "Polymode for Gildas."
   :group 'polymodes
   :type 'object)
 
