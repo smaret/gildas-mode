@@ -21,6 +21,7 @@
   (let ((st (make-syntax-table)))
     (modify-syntax-entry ?\! "<" st) ; begin comment
     (modify-syntax-entry ?\n ">" st) ; end comment
+    (modify-syntax-entry ?_ "w")     ; variables, functions, etc.
     st)
   "Syntax table for `gildas-mode'.")
 
@@ -46,8 +47,6 @@
   `((,gildas-keywords . font-lock-keyword-face)
     (,gildas-types . font-lock-type-face)
     (,gildas-constants . font-lock-constant-face)
-    ;; Fixme: this does not highlight properly functions and variables
-    ;; that have an underscore in their names
     ("procedure \\(\\sw+\\)" (1 font-lock-function-name-face))
     ("let \\(\\sw+\\)" (1 font-lock-variable-name-face))
     ("define \\sw+ \\(\\sw+\\)" (1 font-lock-variable-name-face)))
