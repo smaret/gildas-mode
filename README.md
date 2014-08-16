@@ -1,18 +1,18 @@
-# Overview
+# Gildas-mode
 
-gildas-mode is a major mode for editing
+Gildas-mode is a major mode for editing
 [Gildas](http://www.iram.fr/IRAMFR/GILDAS) scripts in GNU Emacs.
-gildas-mode is free software, licensed under the GNU GPL.
+Gildas-mode is free software, licensed under the GNU GPL.
 
-# Features
+## Features
 
 * Syntax highlighting of comments, keywords, constants, and
   user-defined variable and functions
 * Python mode for PyGildas chunks, based on polymode
 
-# Installation
+## Installation
 
-gildas-mode requires [polymode](https://github.com/vitoshka/polymode).
+Gildas-mode requires [polymode](https://github.com/vitoshka/polymode).
 
 Make sure to place `gildas-mode.el` somewhere in the load-path and add
 the following lines to your `.emacs` file to associate gildas-mode
