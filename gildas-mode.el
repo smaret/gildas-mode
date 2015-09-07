@@ -58,7 +58,40 @@
   (setq-local comment-start "!")
   (setq-local comment-start-skip "!+ *")
   (setq-local font-lock-defaults
-	      '(gildas-font-lock-keywords)))
+	      '(gildas-font-lock-keywords))
+  (setq-local indent-line-function
+	      'gildas-indent-line))
+
+(defun gildas-indent-line ()
+  "Indent current line as Gildas code"
+  (interactive)
+  (beginning-of-line)
+  (if (bobp)
+      (indent-line-to 0)
+    (let ((not-indented t) cur-indent)
+      (if (looking-at "^[ \t]*\\(endif\\|next\\|end procedure\\)")
+	  (progn
+	    (save-excursion
+	      (forward-line -1)
+	      (setq cur-indent (- (current-indentation) default-tab-width)))
+	    (if (< cur-indent 0)
+		(setq cur-indent 0)))
+	      (save-excursion
+          (while not-indented
+            (forward-line -1)
+            (if (looking-at "^[ \t]*\\(endif\\|next\\|end procedure\\)")
+                (progn
+                  (setq cur-indent (current-indentation))
+                  (setq not-indented nil))
+              (if (looking-at "^[ \t]*\\(if .+ then\\|for\\|begin procedure\\)")
+                  (progn
+                    (setq cur-indent (+ (current-indentation) default-tab-width))
+                    (setq not-indented nil))
+                (if (bobp)
+                    (setq not-indented nil)))))))
+      (if cur-indent
+	  (indent-line-to cur-indent)
+	(indent-line-to 0)))))
 
 (defcustom pm-host/gildas
   (pm-bchunkmode "gildas"

@@ -8,6 +8,8 @@ Gildas-mode is free software, licensed under the GNU GPL.
 
 * Syntax highlighting of comments, keywords, constants, and
   user-defined variable and functions
+* Indentation of `if then`, `for next`, and `begin/end procedure`
+  code blocks
 * Python mode for PyGildas chunks, based on polymode
 
 ## Installation
