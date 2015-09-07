@@ -62,6 +62,10 @@
   (setq-local indent-line-function
 	      'gildas-indent-line))
 
+(defvar gildas-indent-offset
+  4
+  "Indentation offset for Gildas.")
+
 (defun gildas-indent-line ()
   "Indent current line as Gildas code"
   (interactive)
@@ -73,7 +77,7 @@
 	  (progn
 	    (save-excursion
 	      (forward-line -1)
-	      (setq cur-indent (- (current-indentation) default-tab-width)))
+	      (setq cur-indent (- (current-indentation) gildas-indent-offset)))
 	    (if (< cur-indent 0)
 		(setq cur-indent 0)))
 	      (save-excursion
@@ -85,7 +89,7 @@
                   (setq not-indented nil))
               (if (looking-at "^[ \t]*\\(if .+ then\\|for\\|begin procedure\\)")
                   (progn
-                    (setq cur-indent (+ (current-indentation) default-tab-width))
+                    (setq cur-indent (+ (current-indentation) gildas-indent-offset))
                     (setq not-indented nil))
                 (if (bobp)
                     (setq not-indented nil)))))))
