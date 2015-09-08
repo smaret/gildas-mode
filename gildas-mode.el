@@ -2,6 +2,17 @@
 
 ;; Copyright (C) 2014-2015 Sébastien Maret
 
+;; Author: Sébastien Maret <sebastien.maret@icloud.com>
+;; Package-Requires: ((polymode))
+;; Keywords: languages, gildas
+;; URL: https://github.com/smaret/gildas-mode
+
+;;; Commentary:
+
+;; This package provides a major mode to edit Gildas scripts.
+
+;;; License:
+
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or
@@ -14,6 +25,8 @@
 
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+;;; Code:
 
 (require 'polymode)
 
@@ -123,6 +136,7 @@
 
 (define-polymode poly-gildas-mode pm-poly/gildas)
 
+;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.astro\\'" . poly-gildas-mode))
 (add-to-list 'auto-mode-alist '("\\.class\\'" . poly-gildas-mode))
 (add-to-list 'auto-mode-alist '("\\.greg\\'" . poly-gildas-mode))
@@ -130,3 +144,4 @@
 (add-to-list 'auto-mode-alist '("\\.sic\\'" . poly-gildas-mode))
 
 (provide 'gildas-mode)
+;;; gildas-mode.el ends here
