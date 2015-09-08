@@ -1,6 +1,6 @@
 ;;; gildas-mode.el --- Emacs mode for Gildas
 
-;; Copyright (C) 2014  Sébastien Maret
+;; Copyright (C) 2014-2015 Sébastien Maret
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -122,5 +122,9 @@
   :type 'object)
 
 (define-polymode poly-gildas-mode pm-poly/gildas)
+
+(add-to-list 'auto-mode-alist '("\\.class\\'" . poly-gildas-mode))
+(add-to-list 'auto-mode-alist '("\\.greg\\'" . poly-gildas-mode))
+(add-to-list 'auto-mode-alist '("\\.map\\'" . poly-gildas-mode))
 
 (provide 'gildas-mode)
