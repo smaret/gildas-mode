@@ -123,8 +123,10 @@
 
 (define-polymode poly-gildas-mode pm-poly/gildas)
 
+(add-to-list 'auto-mode-alist '("\\.astro\\'" . poly-gildas-mode))
 (add-to-list 'auto-mode-alist '("\\.class\\'" . poly-gildas-mode))
 (add-to-list 'auto-mode-alist '("\\.greg\\'" . poly-gildas-mode))
 (add-to-list 'auto-mode-alist '("\\.map\\'" . poly-gildas-mode))
+(add-to-list 'auto-mode-alist '("\\.sic\\'" . poly-gildas-mode))
 
 (provide 'gildas-mode)
