@@ -14,11 +14,9 @@ Gildas-mode is free software, licensed under the GNU GPL.
 
 ## Installation
 
-Gildas-mode requires [polymode](https://github.com/vitoshka/polymode).
+Gildas-mode is available on [MELPA](http://melpa.org). Just
+[add MELPA to your package archives](http://melpa.org/#/getting-started),
+and install the package with `M-x package-install gildas-mode`.
 
-Make sure to place `gildas-mode.el` somewhere in the load-path and add
-the following line to your `.emacs`:
+[![Melpa Status](http://melpa.milkbox.net/packages/gildas-mode-badge.svg)](http://melpa.milkbox.net/#/gildas-mode)
 
-```emacs-lisp
-(require 'gildas-mode)
-```
