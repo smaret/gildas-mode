@@ -1,11 +1,12 @@
-;;; gildas-mode.el --- Emacs mode for Gildas
+;;; gildas-mode.el --- Major mode for Gildas
 
 ;; Copyright (C) 2014-2015 Sébastien Maret
 
 ;; Author: Sébastien Maret <sebastien.maret@icloud.com>
-;; Package-Requires: ((polymode))
+;; Package-Requires: ((polymode "0") (emacs "24.3"))
 ;; Keywords: languages, gildas
 ;; URL: https://github.com/smaret/gildas-mode
+;; Version: 1
 
 ;;; Commentary:
 
@@ -137,11 +138,13 @@
 (define-polymode poly-gildas-mode pm-poly/gildas)
 
 ;;;###autoload
-(add-to-list 'auto-mode-alist '("\\.astro\\'" . poly-gildas-mode))
-(add-to-list 'auto-mode-alist '("\\.class\\'" . poly-gildas-mode))
-(add-to-list 'auto-mode-alist '("\\.greg\\'" . poly-gildas-mode))
-(add-to-list 'auto-mode-alist '("\\.map\\'" . poly-gildas-mode))
-(add-to-list 'auto-mode-alist '("\\.sic\\'" . poly-gildas-mode))
+(progn
+  (autoload 'poly-gildas-mode "gildas-mode" "" t)
+  (add-to-list 'auto-mode-alist '("\\.astro\\'" . poly-gildas-mode))
+  (add-to-list 'auto-mode-alist '("\\.class\\'" . poly-gildas-mode))
+  (add-to-list 'auto-mode-alist '("\\.greg\\'" . poly-gildas-mode))
+  (add-to-list 'auto-mode-alist '("\\.map\\'" . poly-gildas-mode))
+  (add-to-list 'auto-mode-alist '("\\.sic\\'" . poly-gildas-mode)))
 
 (provide 'gildas-mode)
 ;;; gildas-mode.el ends here
