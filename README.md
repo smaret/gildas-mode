@@ -19,4 +19,4 @@ Gildas-mode is available on [MELPA](http://melpa.org). Just
 and install the package with `M-x package-install gildas-mode`.
 
 [![Melpa Status](http://melpa.milkbox.net/packages/gildas-mode-badge.svg)](http://melpa.milkbox.net/#/gildas-mode)
-
+[![Build Status](https://travis-ci.org/smaret/gildas-mode.svg)](https://travis-ci.org/smaret/gildas-mode)
