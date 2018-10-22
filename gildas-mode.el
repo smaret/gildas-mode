@@ -1,12 +1,12 @@
 ;;; gildas-mode.el --- Major mode for Gildas
 
-;; Copyright (C) 2014-2015 Sébastien Maret
+;; Copyright (C) 2014-2018 Sébastien Maret
 
 ;; Author: Sébastien Maret <sebastien.maret@icloud.com>
 ;; Package-Requires: ((polymode "0.1.5") (emacs "25"))
 ;; Keywords: languages, gildas
 ;; URL: https://github.com/smaret/gildas-mode
-;; Version: 1
+;; Version: 1.1
 
 ;;; Commentary:
 
